@@ -5,24 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Termtable — The term-by-term timetable</title>
   <meta name="description" content="Termtable is a sleek iOS timetable app built for university schedules that change every term — not every week. Today view, widgets, reminders. Fully offline, no data collected.">
-  <meta name="theme-color" content="#1C1430">
+  <meta id="meta-theme" name="theme-color" content="#F7F2E9">
   <meta property="og:title" content="Termtable — The term-by-term timetable">
   <meta property="og:description" content="A sleek iOS timetable app built for university schedules that change every term — not every week. Fully offline, no data collected.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Termtable">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%231C1430'/%3E%3Crect%20x='13'%20y='21'%20width='10'%20height='26'%20rx='5'%20fill='%23AFA9EC'/%3E%3Crect%20x='27'%20y='14'%20width='10'%20height='25'%20rx='5'%20fill='%237F77DD'/%3E%3Crect%20x='41'%20y='25'%20width='10'%20height='24'%20rx='5'%20fill='%23CECBF6'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23F7F2E9'/%3E%3Crect%20x='13'%20y='21'%20width='10'%20height='26'%20rx='5'%20fill='%23E1663A'/%3E%3Crect%20x='27'%20y='14'%20width='10'%20height='25'%20rx='5'%20fill='%233E6B52'/%3E%3Crect%20x='41'%20y='25'%20width='10'%20height='24'%20rx='5'%20fill='%234A6FA5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('termtable-theme');
+        var c = { ink: '#F7F2E9', midnight: '#0B1220', library: '#101B16', aubergine: '#1C1430' };
+        if (c[t]) {
+          document.documentElement.setAttribute('data-theme', t);
+          document.getElementById('meta-theme').setAttribute('content', c[t]);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
+    /* ---------- Themes ---------- */
+
     :root {
+      /* Paper and ink (default) */
+      --bg: #F7F2E9;
+      --bg-2: #FBF7EF;
+      --bg-3: #EFE7D8;
+      --accent: #E1663A;
+      --accent-2: #3E6B52;
+      --accent-ink: #B4501E;   /* accent for small text / focus rings */
+      --accent-btn: #B4501E;   /* buttons & pills */
+      --on-accent: #FFFFFF;
+      --text: #23201A;
+      --text-2: #6E675B;
+      --text-3: rgba(35, 32, 26, 0.45);
+      --card-fill: rgba(255, 255, 255, 0.7);
+      --card-stroke: #E3D9C8;
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.35);
+      --glass-shadow: 0 20px 50px rgba(125, 102, 66, 0.16);
+      --streak: rgba(255, 255, 255, 0.6);
+      --dot-1: #E1663A;
+      --dot-2: #3E6B52;
+      --dot-3: #4A6FA5;
+      --dot-4: #B4501E;
+      --glow-a: rgba(225, 102, 58, 0.12);
+      --glow-b: rgba(74, 111, 165, 0.10);
+      --glow-c: rgba(62, 107, 82, 0.10);
+      --glow-d: rgba(180, 80, 30, 0.08);
+    }
+
+    :root[data-theme="midnight"] {
+      --bg: #0B1220;
+      --bg-2: #111C33;
+      --bg-3: #070C16;
+      --accent: #7ADEFF;
+      --accent-2: #3E6DF5;
+      --accent-ink: #7ADEFF;
+      --accent-btn: #7ADEFF;
+      --on-accent: #08131F;
+      --text: #F2F8FC;
+      --text-2: rgba(242, 248, 252, 0.65);
+      --text-3: rgba(242, 248, 252, 0.42);
+      --card-fill: rgba(122, 222, 255, 0.10);
+      --card-stroke: rgba(122, 222, 255, 0.25);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(2, 6, 14, 0.5);
+      --streak: rgba(255, 255, 255, 0.10);
+      --dot-1: #7ADEFF;
+      --dot-2: #3E6DF5;
+      --dot-3: #9B8CFF;
+      --dot-4: #5EE6B8;
+      --glow-a: rgba(62, 109, 245, 0.30);
+      --glow-b: rgba(122, 222, 255, 0.14);
+      --glow-c: rgba(155, 140, 255, 0.13);
+      --glow-d: rgba(94, 230, 184, 0.10);
+    }
+
+    :root[data-theme="library"] {
+      --bg: #101B16;
+      --bg-2: #17251E;
+      --bg-3: #0A110D;
+      --accent: #D6B56E;
+      --accent-2: #3E6B52;
+      --accent-ink: #D6B56E;
+      --accent-btn: #D6B56E;
+      --on-accent: #201807;
+      --text: #F3F1E8;
+      --text-2: rgba(243, 241, 232, 0.60);
+      --text-3: rgba(243, 241, 232, 0.40);
+      --card-fill: rgba(214, 181, 110, 0.10);
+      --card-stroke: rgba(214, 181, 110, 0.30);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(3, 8, 5, 0.5);
+      --streak: rgba(255, 255, 255, 0.09);
+      --dot-1: #D6B56E;
+      --dot-2: #8FAE8B;
+      --dot-3: #C26E4A;
+      --dot-4: #EDE6CE;
+      --glow-a: rgba(214, 181, 110, 0.16);
+      --glow-b: rgba(62, 107, 82, 0.30);
+      --glow-c: rgba(194, 110, 74, 0.12);
+      --glow-d: rgba(143, 174, 139, 0.12);
+    }
+
+    :root[data-theme="aubergine"] {
       --bg: #1C1430;
+      --bg-2: #241A42;
+      --bg-3: #120C22;
       --accent: #AFA9EC;
-      --iris: #7F77DD;
+      --accent-2: #7F77DD;
+      --accent-ink: #AFA9EC;
+      --accent-btn: #AFA9EC;
+      --on-accent: #171030;
       --text: #FFFFFF;
-      --text-2: rgba(237, 233, 247, 0.68);
+      --text-2: rgba(237, 233, 247, 0.65);
       --text-3: rgba(237, 233, 247, 0.45);
-      --glass-fill: linear-gradient(150deg, rgba(255,255,255,0.09), rgba(255,255,255,0.028) 45%, rgba(175,169,236,0.07));
-      --glass-stroke: rgba(255, 255, 255, 0.14);
+      --card-fill: rgba(175, 169, 236, 0.16);
+      --card-stroke: rgba(206, 203, 246, 0.35);
       --glass-shine: inset 0 1px 0 rgba(255,255,255,0.20), inset 0 -1px 0 rgba(255,255,255,0.04);
       --glass-shadow: 0 24px 60px rgba(8, 5, 20, 0.45);
+      --streak: rgba(255, 255, 255, 0.11);
+      --dot-1: #AFA9EC;
+      --dot-2: #7F77DD;
+      --dot-3: #E0A6D8;
+      --dot-4: #8FC7E8;
+      --glow-a: rgba(127, 119, 221, 0.32);
+      --glow-b: rgba(224, 166, 216, 0.16);
+      --glow-c: rgba(143, 199, 232, 0.10);
+      --glow-d: rgba(175, 169, 236, 0.14);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,12 +141,23 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(180deg, #241A42 0%, var(--bg) 40%, #120C22 100%) fixed;
+      background-color: var(--bg);
+      background-image: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 40%, var(--bg-3) 100%);
+      background-attachment: fixed;
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
+    }
+
+    /* Theme switch: colours crossfade, gradients snap (imperceptible at 200ms) */
+    @media (prefers-reduced-motion: no-preference) {
+      body, body * {
+        transition: background-color 0.2s ease, color 0.2s ease,
+                    border-color 0.2s ease, box-shadow 0.2s ease,
+                    fill 0.2s ease, stroke 0.2s ease;
+      }
     }
 
     /* Aurora glows behind the glass */
@@ -46,19 +167,22 @@
       z-index: -1;
       pointer-events: none;
       background:
-        radial-gradient(38rem 26rem at 18% 6%,  rgba(127, 119, 221, 0.32), transparent 65%),
-        radial-gradient(30rem 22rem at 85% 14%, rgba(224, 166, 216, 0.16), transparent 65%),
-        radial-gradient(34rem 26rem at 78% 62%, rgba(143, 199, 232, 0.10), transparent 65%),
-        radial-gradient(36rem 28rem at 12% 88%, rgba(175, 169, 236, 0.14), transparent 65%);
+        radial-gradient(38rem 26rem at 18% 6%,  var(--glow-a), transparent 65%),
+        radial-gradient(30rem 22rem at 85% 14%, var(--glow-b), transparent 65%),
+        radial-gradient(34rem 26rem at 78% 62%, var(--glow-c), transparent 65%),
+        radial-gradient(36rem 28rem at 12% 88%, var(--glow-d), transparent 65%);
       filter: blur(8px);
     }
 
-    ::selection { background: rgba(127, 119, 221, 0.55); color: #fff; }
+    ::selection {
+      background: color-mix(in srgb, var(--accent-2) 40%, transparent);
+      color: var(--text);
+    }
 
-    a { color: var(--accent); }
+    a { color: var(--accent-ink); }
 
     a:focus-visible, .badge:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid var(--accent-ink);
       outline-offset: 3px;
       border-radius: 8px;
     }
@@ -74,10 +198,10 @@
     /* ---------- Glass primitives ---------- */
 
     .glass {
-      background: var(--glass-fill);
+      background: var(--card-fill);
       -webkit-backdrop-filter: blur(22px) saturate(170%);
       backdrop-filter: blur(22px) saturate(170%);
-      border: 1px solid var(--glass-stroke);
+      border: 1px solid var(--card-stroke);
       box-shadow: var(--glass-shine), var(--glass-shadow);
     }
 
@@ -111,6 +235,11 @@
 
     .nav .brand svg { display: block; border-radius: 7px; }
 
+    .mark-bg { fill: color-mix(in srgb, var(--text) 7%, transparent); }
+    .mark-1 { fill: var(--dot-1); }
+    .mark-2 { fill: var(--dot-2); }
+    .mark-3 { fill: var(--dot-3); }
+
     .nav a.link {
       font-size: 13.5px;
       font-weight: 500;
@@ -123,7 +252,7 @@
 
     .nav a.link:hover {
       color: var(--text);
-      background: rgba(255, 255, 255, 0.08);
+      background: color-mix(in srgb, var(--text) 8%, transparent);
     }
 
     /* ---------- Hero ---------- */
@@ -145,7 +274,7 @@
 
     .hero h1 strong {
       font-weight: 600;
-      background: linear-gradient(120deg, #FFFFFF 20%, var(--accent) 80%);
+      background: linear-gradient(120deg, var(--text) 15%, var(--accent-ink) 85%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -186,12 +315,53 @@
 
     .badge span { text-align: left; line-height: 1.25; }
 
+    /* ---------- Theme picker ---------- */
+
+    .themes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in srgb, var(--text) 30%, transparent);
+      background: var(--sw-bg);
+      position: relative;
+      padding: 0;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .swatch::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background: var(--sw-dot);
+    }
+
+    .swatch[aria-pressed="true"] {
+      box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent-ink);
+    }
+
+    .swatch:focus-visible {
+      outline: 2px solid var(--accent-ink);
+      outline-offset: 3px;
+    }
+
     /* Load-in */
     .hero > *, .widget { animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards; }
     .hero > *:nth-child(2) { animation-delay: 0.08s; }
     .hero > *:nth-child(3) { animation-delay: 0.16s; }
     .hero > *:nth-child(4) { animation-delay: 0.24s; }
-    .widget { animation-delay: 0.34s; }
+    .hero > *:nth-child(5) { animation-delay: 0.3s; }
+    .widget { animation-delay: 0.4s; }
 
     @keyframes rise {
       from { opacity: 0; transform: translateY(16px); }
@@ -216,7 +386,7 @@
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: radial-gradient(120% 55% at 50% -18%, rgba(255,255,255,0.13), transparent 60%);
+      background: radial-gradient(120% 55% at 50% -18%, var(--streak), transparent 60%);
       pointer-events: none;
     }
 
@@ -232,7 +402,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--accent);
+      color: var(--accent-ink);
     }
 
     .widget .w-date { font-size: 13px; color: var(--text-3); }
@@ -246,9 +416,9 @@
     }
 
     .row.next {
-      background: rgba(175, 169, 236, 0.14);
-      border: 1px solid rgba(206, 203, 246, 0.22);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
+      background: color-mix(in srgb, var(--accent) 13%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
     }
 
     .row .bar { width: 4.5px; height: 34px; border-radius: 3px; flex: none; }
@@ -271,8 +441,8 @@
     .pill {
       font-size: 12px;
       font-weight: 600;
-      color: #1C1430;
-      background: var(--accent);
+      color: var(--on-accent);
+      background: var(--accent-btn);
       padding: 4px 11px;
       border-radius: 999px;
       flex: none;
@@ -290,7 +460,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--accent);
+      color: var(--accent-ink);
       margin-bottom: 14px;
     }
 
@@ -326,7 +496,7 @@
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: radial-gradient(110% 60% at 50% -20%, rgba(255,255,255,0.10), transparent 60%);
+      background: radial-gradient(110% 60% at 50% -20%, var(--streak), transparent 60%);
       pointer-events: none;
     }
 
@@ -338,10 +508,13 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
-      background: linear-gradient(155deg, rgba(255,255,255,0.13), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.22);
+      background: color-mix(in srgb, var(--text) 6%, transparent);
+      border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
     }
+
+    .card:nth-child(1) .icon svg { stroke: var(--dot-1); }
+    .card:nth-child(2) .icon svg { stroke: var(--dot-2); }
+    .card:nth-child(3) .icon svg { stroke: var(--dot-3); }
 
     .card h3 {
       font-size: 19px;
@@ -367,7 +540,7 @@
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      background: radial-gradient(90% 65% at 50% -25%, rgba(175,169,236,0.16), transparent 60%);
+      background: radial-gradient(90% 65% at 50% -25%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 60%);
       pointer-events: none;
     }
 
@@ -378,9 +551,13 @@
       margin-top: 30px;
       padding: 14px 32px;
       border-radius: 999px;
-      background: linear-gradient(160deg, #C6C1F4, var(--accent) 55%, #9A92E6);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 10px 30px rgba(127, 119, 221, 0.35);
-      color: #171030;
+      background: linear-gradient(160deg,
+        color-mix(in srgb, var(--accent-btn) 82%, white),
+        var(--accent-btn) 55%,
+        color-mix(in srgb, var(--accent-btn) 86%, black));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45),
+                  0 10px 30px color-mix(in srgb, var(--accent-btn) 35%, transparent);
+      color: var(--on-accent);
       font-size: 16px;
       font-weight: 600;
       text-decoration: none;
@@ -389,7 +566,8 @@
 
     .mail-btn:hover {
       transform: translateY(-2px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 14px 36px rgba(127, 119, 221, 0.45);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45),
+                  0 14px 36px color-mix(in srgb, var(--accent-btn) 45%, transparent);
     }
 
     .mail-btn:active { transform: scale(0.98); }
@@ -415,10 +593,10 @@
   <nav class="nav glass" aria-label="Main">
     <a class="brand" href="#">
       <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <rect width="64" height="64" rx="16" fill="rgba(255,255,255,0.07)"/>
-        <rect x="13" y="21" width="10" height="26" rx="5" fill="#AFA9EC"/>
-        <rect x="27" y="14" width="10" height="25" rx="5" fill="#7F77DD"/>
-        <rect x="41" y="25" width="10" height="24" rx="5" fill="#CECBF6"/>
+        <rect class="mark-bg" width="64" height="64" rx="16"/>
+        <rect class="mark-1" x="13" y="21" width="10" height="26" rx="5"/>
+        <rect class="mark-2" x="27" y="14" width="10" height="25" rx="5"/>
+        <rect class="mark-3" x="41" y="25" width="10" height="24" rx="5"/>
       </svg>
       Termtable
     </a>
@@ -437,6 +615,20 @@
         </svg>
         <span><small>Coming soon to the</small>App Store</span>
       </span>
+      <div class="themes" role="group" aria-label="Preview app themes">
+        <button class="swatch" type="button" data-set-theme="ink" aria-pressed="true"
+          aria-label="Paper and ink theme" title="Paper and ink"
+          style="--sw-bg:#F7F2E9; --sw-dot:#E1663A"></button>
+        <button class="swatch" type="button" data-set-theme="midnight" aria-pressed="false"
+          aria-label="Midnight circuit theme" title="Midnight circuit"
+          style="--sw-bg:#0B1220; --sw-dot:#7ADEFF"></button>
+        <button class="swatch" type="button" data-set-theme="library" aria-pressed="false"
+          aria-label="Night library theme" title="Night library"
+          style="--sw-bg:#101B16; --sw-dot:#D6B56E"></button>
+        <button class="swatch" type="button" data-set-theme="aubergine" aria-pressed="false"
+          aria-label="Aubergine theme" title="Aubergine"
+          style="--sw-bg:#1C1430; --sw-dot:#AFA9EC"></button>
+      </div>
     </header>
 
     <div class="widget-stage wrap" aria-hidden="true">
@@ -446,7 +638,7 @@
           <span class="w-date">Tuesday · Autumn term</span>
         </div>
         <div class="row next">
-          <span class="bar" style="background:#AFA9EC"></span>
+          <span class="bar" style="background:var(--dot-1)"></span>
           <span class="t">
             <span class="name">Linear Algebra</span><br>
             <span class="meta">10:00 – 11:00 · Room B12</span>
@@ -454,14 +646,14 @@
           <span class="pill">in 25 min</span>
         </div>
         <div class="row dim">
-          <span class="bar" style="background:#E0A6D8"></span>
+          <span class="bar" style="background:var(--dot-2)"></span>
           <span class="t">
             <span class="name">Microeconomics</span><br>
             <span class="meta">13:00 – 14:30 · Lecture Hall 2</span>
           </span>
         </div>
         <div class="row dim">
-          <span class="bar" style="background:#8FC7E8"></span>
+          <span class="bar" style="background:var(--dot-3)"></span>
           <span class="t">
             <span class="name">Statistics Lab</span><br>
             <span class="meta">15:00 – 16:00 · Lab 4</span>
@@ -476,7 +668,7 @@
       <div class="cards">
         <article class="card glass">
           <div class="icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFA9EC" stroke-width="1.8" stroke-linecap="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
               <rect x="3.5" y="8" width="4.6" height="12.5" rx="2.3"/>
               <rect x="9.7" y="3.5" width="4.6" height="12" rx="2.3"/>
               <rect x="15.9" y="9.5" width="4.6" height="11" rx="2.3"/>
@@ -487,7 +679,7 @@
         </article>
         <article class="card glass">
           <div class="icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E0A6D8" stroke-width="1.8" stroke-linecap="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
               <circle cx="12" cy="12" r="8.5"/>
               <path d="M12 7.5V12l3 2"/>
             </svg>
@@ -497,7 +689,7 @@
         </article>
         <article class="card glass">
           <div class="icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8FC7E8" stroke-width="1.8" stroke-linecap="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round">
               <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2.4"/>
               <rect x="13" y="3.5" width="7.5" height="7.5" rx="2.4"/>
               <rect x="3.5" y="13" width="7.5" height="7.5" rx="2.4"/>
@@ -527,6 +719,33 @@
       </div>
     </section>
   </main>
+
+  <script>
+    (function () {
+      var colors = { ink: '#F7F2E9', midnight: '#0B1220', library: '#101B16', aubergine: '#1C1430' };
+      var meta = document.getElementById('meta-theme');
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.swatch'));
+
+      function apply(name, save) {
+        document.documentElement.setAttribute('data-theme', name);
+        meta.setAttribute('content', colors[name]);
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-set-theme') === name));
+        });
+        if (save) {
+          try { localStorage.setItem('termtable-theme', name); } catch (e) {}
+        }
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.getAttribute('data-set-theme'), true); });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem('termtable-theme'); } catch (e) {}
+      apply(colors[saved] ? saved : 'ink', false);
+    })();
+  </script>
 
 </body>
 </html>
