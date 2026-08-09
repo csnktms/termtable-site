@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — Termtable</title>
+  <meta name="robots" content="noindex">
+  <meta id="meta-theme" name="theme-color" content="#F7F2E9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23F7F2E9'/%3E%3Crect%20x='13'%20y='21'%20width='10'%20height='26'%20rx='5'%20fill='%23E1663A'/%3E%3Crect%20x='27'%20y='14'%20width='10'%20height='25'%20rx='5'%20fill='%233E6B52'/%3E%3Crect%20x='41'%20y='25'%20width='10'%20height='24'%20rx='5'%20fill='%234A6FA5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('termtable-theme');
+        var c = { ink: '#F7F2E9', midnight: '#0B1220', library: '#101B16', aubergine: '#1C1430' };
+        if (c[t]) {
+          document.documentElement.setAttribute('data-theme', t);
+          document.getElementById('meta-theme').setAttribute('content', c[t]);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #F7F2E9;
+      --bg-2: #FBF7EF;
+      --bg-3: #EFE7D8;
+      --accent: #E1663A;
+      --accent-2: #3E6B52;
+      --accent-ink: #B4501E;
+      --accent-btn: #B4501E;
+      --on-accent: #FFFFFF;
+      --text: #23201A;
+      --text-2: #6E675B;
+      --card-fill: rgba(255, 255, 255, 0.7);
+      --card-stroke: #E3D9C8;
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.35);
+      --glass-shadow: 0 20px 50px rgba(125, 102, 66, 0.16);
+      --dot-1: #E1663A;
+      --dot-2: #3E6B52;
+      --dot-3: #4A6FA5;
+      --glow-a: rgba(225, 102, 58, 0.12);
+      --glow-b: rgba(74, 111, 165, 0.10);
+      --glow-c: rgba(62, 107, 82, 0.10);
+      --glow-d: rgba(180, 80, 30, 0.08);
+    }
+
+    :root[data-theme="midnight"] {
+      --bg: #0B1220;
+      --bg-2: #111C33;
+      --bg-3: #070C16;
+      --accent: #7ADEFF;
+      --accent-2: #3E6DF5;
+      --accent-ink: #7ADEFF;
+      --accent-btn: #7ADEFF;
+      --on-accent: #08131F;
+      --text: #F2F8FC;
+      --text-2: rgba(242, 248, 252, 0.65);
+      --card-fill: rgba(122, 222, 255, 0.10);
+      --card-stroke: rgba(122, 222, 255, 0.25);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(2, 6, 14, 0.5);
+      --dot-1: #7ADEFF;
+      --dot-2: #3E6DF5;
+      --dot-3: #9B8CFF;
+      --glow-a: rgba(62, 109, 245, 0.30);
+      --glow-b: rgba(122, 222, 255, 0.14);
+      --glow-c: rgba(155, 140, 255, 0.13);
+      --glow-d: rgba(94, 230, 184, 0.10);
+    }
+
+    :root[data-theme="library"] {
+      --bg: #101B16;
+      --bg-2: #17251E;
+      --bg-3: #0A110D;
+      --accent: #D6B56E;
+      --accent-2: #3E6B52;
+      --accent-ink: #D6B56E;
+      --accent-btn: #D6B56E;
+      --on-accent: #201807;
+      --text: #F3F1E8;
+      --text-2: rgba(243, 241, 232, 0.60);
+      --card-fill: rgba(214, 181, 110, 0.10);
+      --card-stroke: rgba(214, 181, 110, 0.30);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(3, 8, 5, 0.5);
+      --dot-1: #D6B56E;
+      --dot-2: #8FAE8B;
+      --dot-3: #C26E4A;
+      --glow-a: rgba(214, 181, 110, 0.16);
+      --glow-b: rgba(62, 107, 82, 0.30);
+      --glow-c: rgba(194, 110, 74, 0.12);
+      --glow-d: rgba(143, 174, 139, 0.12);
+    }
+
+    :root[data-theme="aubergine"] {
+      --bg: #1C1430;
+      --bg-2: #241A42;
+      --bg-3: #120C22;
+      --accent: #AFA9EC;
+      --accent-2: #7F77DD;
+      --accent-ink: #AFA9EC;
+      --accent-btn: #AFA9EC;
+      --on-accent: #171030;
+      --text: #FFFFFF;
+      --text-2: rgba(237, 233, 247, 0.65);
+      --card-fill: rgba(175, 169, 236, 0.16);
+      --card-stroke: rgba(206, 203, 246, 0.35);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.20), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(8, 5, 20, 0.45);
+      --dot-1: #AFA9EC;
+      --dot-2: #7F77DD;
+      --dot-3: #E0A6D8;
+      --glow-a: rgba(127, 119, 221, 0.32);
+      --glow-b: rgba(224, 166, 216, 0.16);
+      --glow-c: rgba(143, 199, 232, 0.10);
+      --glow-d: rgba(175, 169, 236, 0.14);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      background-image: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 40%, var(--bg-3) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .aurora {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(38rem 26rem at 18% 6%,  var(--glow-a), transparent 65%),
+        radial-gradient(30rem 22rem at 85% 14%, var(--glow-b), transparent 65%),
+        radial-gradient(34rem 26rem at 78% 62%, var(--glow-c), transparent 65%),
+        radial-gradient(36rem 28rem at 12% 88%, var(--glow-d), transparent 65%);
+      filter: blur(8px);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent-ink);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .mark { margin-bottom: 26px; }
+    .mark-bg { fill: color-mix(in srgb, var(--text) 7%, transparent); }
+    .mark-1 { fill: var(--dot-1); }
+    .mark-2 { fill: var(--dot-2); }
+    .mark-3 { fill: var(--dot-3); }
+
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-ink);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 6vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: var(--text-2);
+      max-width: 26em;
+      margin: 0 auto 34px;
+    }
+
+    .home-btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border-radius: 999px;
+      background: linear-gradient(160deg,
+        color-mix(in srgb, var(--accent-btn) 82%, white),
+        var(--accent-btn) 55%,
+        color-mix(in srgb, var(--accent-btn) 86%, black));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45),
+                  0 10px 30px color-mix(in srgb, var(--accent-btn) 35%, transparent);
+      color: var(--on-accent);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main>
+    <svg class="mark" width="64" height="64" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <rect class="mark-bg" width="64" height="64" rx="16"/>
+      <rect class="mark-1" x="13" y="21" width="10" height="26" rx="5"/>
+      <rect class="mark-2" x="27" y="14" width="10" height="25" rx="5"/>
+      <rect class="mark-3" x="41" y="25" width="10" height="24" rx="5"/>
+    </svg>
+    <span class="eyebrow">404</span>
+    <h1>This page isn’t on the timetable.</h1>
+    <p>The address may be mistyped, moved, or was never scheduled in the first place.</p>
+    <a class="home-btn" href="/">Back to Termtable</a>
+  </main>
+
+</body>
+</html>
