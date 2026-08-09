@@ -6,9 +6,10 @@ Marketing and support page for **Termtable**, an iOS timetable app built for uni
 
 ## About
 
-A single self-contained `index.html` — inline CSS, no build step, no dependencies, no analytics or external requests. Served via GitHub Pages from the root of `main` at [termtable.app](https://termtable.app/).
+Self-contained static pages — inline CSS, no build step, no dependencies, no analytics or external requests. Served via GitHub Pages from the root of `main` at [termtable.app](https://termtable.app/).
 
-The page doubles as the App Store support URL ([`/#support`](https://termtable.app/#support)) and privacy statement ([`/#privacy`](https://termtable.app/#privacy)).
+- [`index.html`](index.html) — landing page; doubles as the App Store support URL ([`/#support`](https://termtable.app/#support))
+- [`privacy/index.html`](privacy/index.html) — the [Privacy Policy](https://termtable.app/privacy/), for App Store Connect's privacy policy URL field
 
 ## Development
 

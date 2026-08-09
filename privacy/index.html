@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Termtable</title>
+  <meta name="description" content="Termtable's privacy policy: no accounts, no analytics, no tracking, no data collection of any kind. Your timetable stays on your device.">
+  <meta id="meta-theme" name="theme-color" content="#F7F2E9">
+  <meta property="og:title" content="Privacy Policy — Termtable">
+  <meta property="og:description" content="No accounts, no analytics, no tracking, no data collection of any kind. Your timetable stays on your device.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Termtable">
+  <meta property="og:url" content="https://termtable.app/privacy/">
+  <link rel="canonical" href="https://termtable.app/privacy/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23F7F2E9'/%3E%3Crect%20x='13'%20y='21'%20width='10'%20height='26'%20rx='5'%20fill='%23E1663A'/%3E%3Crect%20x='27'%20y='14'%20width='10'%20height='25'%20rx='5'%20fill='%233E6B52'/%3E%3Crect%20x='41'%20y='25'%20width='10'%20height='24'%20rx='5'%20fill='%234A6FA5'/%3E%3C/svg%3E">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('termtable-theme');
+        var c = { ink: '#F7F2E9', midnight: '#0B1220', library: '#101B16', aubergine: '#1C1430' };
+        if (c[t]) {
+          document.documentElement.setAttribute('data-theme', t);
+          document.getElementById('meta-theme').setAttribute('content', c[t]);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    /* ---------- Themes ---------- */
+
+    :root {
+      /* Paper and ink (default) */
+      --bg: #F7F2E9;
+      --bg-2: #FBF7EF;
+      --bg-3: #EFE7D8;
+      --accent: #E1663A;
+      --accent-2: #3E6B52;
+      --accent-ink: #B4501E;
+      --text: #23201A;
+      --text-2: #6E675B;
+      --text-3: rgba(35, 32, 26, 0.45);
+      --card-fill: rgba(255, 255, 255, 0.7);
+      --card-stroke: #E3D9C8;
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(255,255,255,0.35);
+      --glass-shadow: 0 20px 50px rgba(125, 102, 66, 0.16);
+      --dot-1: #E1663A;
+      --dot-2: #3E6B52;
+      --dot-3: #4A6FA5;
+      --glow-a: rgba(225, 102, 58, 0.12);
+      --glow-b: rgba(74, 111, 165, 0.10);
+      --glow-c: rgba(62, 107, 82, 0.10);
+      --glow-d: rgba(180, 80, 30, 0.08);
+    }
+
+    :root[data-theme="midnight"] {
+      --bg: #0B1220;
+      --bg-2: #111C33;
+      --bg-3: #070C16;
+      --accent: #7ADEFF;
+      --accent-2: #3E6DF5;
+      --accent-ink: #7ADEFF;
+      --text: #F2F8FC;
+      --text-2: rgba(242, 248, 252, 0.65);
+      --text-3: rgba(242, 248, 252, 0.42);
+      --card-fill: rgba(122, 222, 255, 0.10);
+      --card-stroke: rgba(122, 222, 255, 0.25);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.18), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(2, 6, 14, 0.5);
+      --dot-1: #7ADEFF;
+      --dot-2: #3E6DF5;
+      --dot-3: #9B8CFF;
+      --glow-a: rgba(62, 109, 245, 0.30);
+      --glow-b: rgba(122, 222, 255, 0.14);
+      --glow-c: rgba(155, 140, 255, 0.13);
+      --glow-d: rgba(94, 230, 184, 0.10);
+    }
+
+    :root[data-theme="library"] {
+      --bg: #101B16;
+      --bg-2: #17251E;
+      --bg-3: #0A110D;
+      --accent: #D6B56E;
+      --accent-2: #3E6B52;
+      --accent-ink: #D6B56E;
+      --text: #F3F1E8;
+      --text-2: rgba(243, 241, 232, 0.60);
+      --text-3: rgba(243, 241, 232, 0.40);
+      --card-fill: rgba(214, 181, 110, 0.10);
+      --card-stroke: rgba(214, 181, 110, 0.30);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(3, 8, 5, 0.5);
+      --dot-1: #D6B56E;
+      --dot-2: #8FAE8B;
+      --dot-3: #C26E4A;
+      --glow-a: rgba(214, 181, 110, 0.16);
+      --glow-b: rgba(62, 107, 82, 0.30);
+      --glow-c: rgba(194, 110, 74, 0.12);
+      --glow-d: rgba(143, 174, 139, 0.12);
+    }
+
+    :root[data-theme="aubergine"] {
+      --bg: #1C1430;
+      --bg-2: #241A42;
+      --bg-3: #120C22;
+      --accent: #AFA9EC;
+      --accent-2: #7F77DD;
+      --accent-ink: #AFA9EC;
+      --text: #FFFFFF;
+      --text-2: rgba(237, 233, 247, 0.65);
+      --text-3: rgba(237, 233, 247, 0.45);
+      --card-fill: rgba(175, 169, 236, 0.16);
+      --card-stroke: rgba(206, 203, 246, 0.35);
+      --glass-shine: inset 0 1px 0 rgba(255,255,255,0.20), inset 0 -1px 0 rgba(255,255,255,0.04);
+      --glass-shadow: 0 24px 60px rgba(8, 5, 20, 0.45);
+      --dot-1: #AFA9EC;
+      --dot-2: #7F77DD;
+      --dot-3: #E0A6D8;
+      --glow-a: rgba(127, 119, 221, 0.32);
+      --glow-b: rgba(224, 166, 216, 0.16);
+      --glow-c: rgba(143, 199, 232, 0.10);
+      --glow-d: rgba(175, 169, 236, 0.14);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      background-image: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 40%, var(--bg-3) 100%);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      body, body * {
+        transition: background-color 0.2s ease, color 0.2s ease,
+                    border-color 0.2s ease, box-shadow 0.2s ease,
+                    fill 0.2s ease, stroke 0.2s ease;
+      }
+    }
+
+    .aurora {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(38rem 26rem at 18% 6%,  var(--glow-a), transparent 65%),
+        radial-gradient(30rem 22rem at 85% 14%, var(--glow-b), transparent 65%),
+        radial-gradient(34rem 26rem at 78% 62%, var(--glow-c), transparent 65%),
+        radial-gradient(36rem 28rem at 12% 88%, var(--glow-d), transparent 65%);
+      filter: blur(8px);
+    }
+
+    ::selection {
+      background: color-mix(in srgb, var(--accent-2) 40%, transparent);
+      color: var(--text);
+    }
+
+    a { color: var(--accent-ink); }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent-ink);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    /* ---------- Glass & nav (same as home) ---------- */
+
+    .glass {
+      background: var(--card-fill);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      backdrop-filter: blur(22px) saturate(170%);
+      border: 1px solid var(--card-stroke);
+      box-shadow: var(--glass-shine), var(--glass-shadow);
+    }
+
+    .nav {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 7px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .nav .brand {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      padding: 5px 10px 5px 6px;
+      border-radius: 999px;
+    }
+
+    .nav .brand svg { display: block; border-radius: 7px; }
+
+    .mark-bg { fill: color-mix(in srgb, var(--text) 7%, transparent); }
+    .mark-1 { fill: var(--dot-1); }
+    .mark-2 { fill: var(--dot-2); }
+    .mark-3 { fill: var(--dot-3); }
+
+    .nav a.link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-2);
+      text-decoration: none;
+      padding: 6px 13px;
+      border-radius: 999px;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .nav a.link:hover {
+      color: var(--text);
+      background: color-mix(in srgb, var(--text) 8%, transparent);
+    }
+
+    .nav a.link[aria-current="page"] { color: var(--text); }
+
+    /* ---------- Document ---------- */
+
+    .doc {
+      max-width: 65ch;
+      margin: 0 auto;
+      padding: clamp(110px, 16vh, 150px) 24px 40px;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-ink);
+      margin-bottom: 14px;
+    }
+
+    .doc h1 {
+      font-size: clamp(32px, 6vw, 46px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 10px;
+    }
+
+    .doc .date {
+      font-size: 14px;
+      color: var(--text-3);
+      margin-bottom: 36px;
+    }
+
+    .doc h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 38px 0 10px;
+    }
+
+    .doc p { color: var(--text-2); margin-bottom: 14px; }
+
+    .doc .lede { font-size: 17px; color: var(--text); }
+
+    /* ---------- Theme picker ---------- */
+
+    .themes {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 24px 56px;
+      border-top: 1px solid var(--card-stroke);
+      max-width: 65ch;
+      margin: 24px auto 0;
+    }
+
+    .swatch {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in srgb, var(--text) 30%, transparent);
+      background: var(--sw-bg);
+      position: relative;
+      padding: 0;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .swatch::after {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 50%;
+      background: var(--sw-dot);
+    }
+
+    .swatch[aria-pressed="true"] {
+      box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent-ink);
+    }
+
+    .swatch:focus-visible {
+      outline: 2px solid var(--accent-ink);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="aurora" aria-hidden="true"></div>
+
+  <nav class="nav glass" aria-label="Main">
+    <a class="brand" href="/">
+      <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect class="mark-bg" width="64" height="64" rx="16"/>
+        <rect class="mark-1" x="13" y="21" width="10" height="26" rx="5"/>
+        <rect class="mark-2" x="27" y="14" width="10" height="25" rx="5"/>
+        <rect class="mark-3" x="41" y="25" width="10" height="24" rx="5"/>
+      </svg>
+      Termtable
+    </a>
+    <a class="link" href="/#support">Support</a>
+    <a class="link" href="/privacy/" aria-current="page">Privacy</a>
+  </nav>
+
+  <main class="doc">
+    <span class="eyebrow">Termtable</span>
+    <h1>Privacy Policy</h1>
+    <p class="date">Effective date: 8 August 2026</p>
+
+    <p class="lede">Termtable is built on a simple principle: your timetable is your business. This policy explains, completely, what happens with your data — which is quick, because almost nothing does.</p>
+
+    <h2>What we collect</h2>
+    <p>Nothing. Termtable has no accounts, no sign-up, no analytics, no advertising, no tracking, and makes no network requests. We do not collect, receive, store, or share any personal data — or any data at all — from your use of the app.</p>
+
+    <h2>Where your data lives</h2>
+    <p>Everything you enter into Termtable — academic years, terms, classes, locations, notes, settings — is stored only on your device, in the app's private storage. It is never transmitted anywhere. Widgets and the Live Activity read the same on-device data; class reminders are local notifications scheduled entirely by your device. If you delete the app, that data is deleted with it.</p>
+
+    <h2>Third parties</h2>
+    <p>There are none. Termtable includes no third-party code, SDKs, analytics services, or advertising frameworks.</p>
+
+    <h2>Apple</h2>
+    <p>Termtable is distributed through the App Store and TestFlight, which are operated by Apple. Apple may process data related to your download or beta participation (such as crash reports or TestFlight feedback you choose to send) under Apple's privacy policy. If you share TestFlight feedback or a crash report, we may see it — that's the only way any information from you can reach us through the app, and it happens only at your explicit choice.</p>
+
+    <h2>If you email us</h2>
+    <p>If you contact support at <a href="mailto:csnktms@gmail.com">csnktms@gmail.com</a>, we'll have your email address and whatever you write — used only to reply and resolve your issue, kept only as long as ordinary correspondence, never shared.</p>
+
+    <h2>Children</h2>
+    <p>Termtable is safe for all ages and collects nothing from anyone, children included.</p>
+
+    <h2>Changes</h2>
+    <p>If a future version of Termtable ever changes any of the above (for example, an optional iCloud sync feature), this policy will be updated before that version ships, and the change will be clearly described.</p>
+
+    <h2>Contact</h2>
+    <p>Tamas Csonka · <a href="mailto:csnktms@gmail.com">csnktms@gmail.com</a> · <a href="https://termtable.app">termtable.app</a></p>
+  </main>
+
+  <div class="themes" role="group" aria-label="Preview app themes">
+    <button class="swatch" type="button" data-set-theme="ink" aria-pressed="true"
+      aria-label="Paper and ink theme" title="Paper and ink"
+      style="--sw-bg:#F7F2E9; --sw-dot:#E1663A"></button>
+    <button class="swatch" type="button" data-set-theme="midnight" aria-pressed="false"
+      aria-label="Midnight circuit theme" title="Midnight circuit"
+      style="--sw-bg:#0B1220; --sw-dot:#7ADEFF"></button>
+    <button class="swatch" type="button" data-set-theme="library" aria-pressed="false"
+      aria-label="Night library theme" title="Night library"
+      style="--sw-bg:#101B16; --sw-dot:#D6B56E"></button>
+    <button class="swatch" type="button" data-set-theme="aubergine" aria-pressed="false"
+      aria-label="Aubergine theme" title="Aubergine"
+      style="--sw-bg:#1C1430; --sw-dot:#AFA9EC"></button>
+  </div>
+
+  <script>
+    (function () {
+      var colors = { ink: '#F7F2E9', midnight: '#0B1220', library: '#101B16', aubergine: '#1C1430' };
+      var meta = document.getElementById('meta-theme');
+      var buttons = Array.prototype.slice.call(document.querySelectorAll('.swatch'));
+
+      function apply(name, save) {
+        document.documentElement.setAttribute('data-theme', name);
+        meta.setAttribute('content', colors[name]);
+        buttons.forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-set-theme') === name));
+        });
+        if (save) {
+          try { localStorage.setItem('termtable-theme', name); } catch (e) {}
+        }
+      }
+
+      buttons.forEach(function (b) {
+        b.addEventListener('click', function () { apply(b.getAttribute('data-set-theme'), true); });
+      });
+
+      var saved = null;
+      try { saved = localStorage.getItem('termtable-theme'); } catch (e) {}
+      apply(colors[saved] ? saved : 'ink', false);
+    })();
+  </script>
+
+</body>
+</html>
