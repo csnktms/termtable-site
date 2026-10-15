@@ -1,6 +1,6 @@
 # Termtable site
 
-Marketing and support page for **Termtable**, an iOS timetable app built for university schedules that change every term — not every week.
+Marketing and support page for **[Termtable](https://apps.apple.com/app/id6798024694)**, an iOS timetable app built for university schedules that change every term — not every week.
 
 **Live:** [termtable.app](https://termtable.app/)
 
